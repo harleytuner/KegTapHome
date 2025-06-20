@@ -14,3 +14,4 @@ void lvgl_unlock(void);
 #ifdef __cplusplus
 }
 #endif
+#endif

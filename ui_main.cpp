@@ -6,7 +6,7 @@
 static lv_obj_t *tabview;
 
 void ui_main_init() {
-  tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 40); 
+  tabview = lv_tabview_create(lv_scr_act()); // Corrected for older LVGL
   
   lv_obj_t *ui_image_page = lv_tabview_add_tab(tabview, "Image");
   lv_obj_t *ui_keg_level_page = lv_tabview_add_tab(tabview, "Keg Level");

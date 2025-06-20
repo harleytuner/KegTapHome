@@ -4,7 +4,7 @@
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
-#include "bsp_lv_port.h" 
+#include "bsp_lv_port.h"
 
 void check_and_load_image();
 
@@ -68,7 +68,7 @@ void setup_ui_image_page(lv_obj_t *page) {
     pAdvertising->setScanResponse(true);
     BLEDevice::startAdvertising();
 
-    file_is_ready_on_sd = true; 
+    file_is_ready_on_sd = true;
 }
 
 void check_and_load_image() {
@@ -89,7 +89,7 @@ void check_and_load_image() {
                     img_dsc.header.w = 160;
                     img_dsc.header.h = 160;
                     img_dsc.data_size = logoFile.size();
-                    img_dsc.header.cf = LV_IMG_CF_TRUE_COLOR;
+                    img_dsc.header.cf = LV_IMG_CF_RGB565; // Changed LV_IMG_CF_TRUE_COLOR to LV_IMG_CF_RGB565
                     img_dsc.data = img_buf;
                     lv_img_set_src(beer_logo, &img_dsc);
                 }

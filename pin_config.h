@@ -2,8 +2,9 @@
 #ifndef PIN_CONFIG_H
 #define PIN_CONFIG_H
 
+#include "lv_conf.h" 
 #include <Arduino.h>
-#include <lvgl.h>
+#include <lvgl.h> // Keep this include
 #include <Arduino_GFX_Library.h>
 #include <Wire.h>
 #include "FS.h"
@@ -26,11 +27,11 @@
 
 // Forward declarations for global objects
 extern Arduino_GFX *gfx;
-extern lv_disp_draw_buf_t draw_buf;
+extern lv_draw_buf_t draw_buf; // Changed lv_disp_draw_buf_t to lv_draw_buf_t
 extern lv_color_t *disp_buf;
 extern lv_disp_drv_t disp_drv;
 extern lv_indev_drv_t indev_drv;
-extern bool sd_card_initialized; 
+extern bool sd_card_initialized;
 
 // Forward declarations for core functions
 void my_disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);
